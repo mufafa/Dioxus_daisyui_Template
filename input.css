@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
+
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+
+
+@plugin "daisyui" {
+  themes: cupcake --default, light, dark, aqua --prefersdark;
+}
+
+@layer base {
+  :root {
+    --font-sans: Jura, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+
+  html {
+    font-family: var(--font-sans);
+    font-size: 15px; /* Default font size */
+  }
+
+  body {
+    font-size: 1rem; /* 1rem = 18px olacak */
+  }
+  
+}
+
+@layer components {
+  .btn {
+    min-height: 18px !important; /* Minimum yüksekliği zorla */
+    height: 18px !important; /* Buton yüksekliğini sabitle */
+    padding: 12px 24px;
+  }
+}
+
+
