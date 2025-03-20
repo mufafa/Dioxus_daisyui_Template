@@ -20,6 +20,9 @@ jobs:
     
     - name: install-libs
       run: npm install
+
+    - name: install-tailwindcss
+      run: npm install -g tailwindcss
   
     - name: generate-tailwindcss
       run: npx tailwindcss -i input.css -o assets/tailwind.css
