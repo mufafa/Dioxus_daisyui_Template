@@ -15,11 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: NodeJS-env
-      uses: actions/setup-node@v4.3.0
-    - name: npm-worker
-      uses: mudlabs/npm-worker@v1.3.0
-
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+    
     - name: install-libs
       run: npm install
   
