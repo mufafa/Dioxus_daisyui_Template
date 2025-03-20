@@ -1,0 +1,31 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: NodeJS-env
+      uses: actions/setup-node@v4.3.0
+    
+    - name: install-libs
+      run: npm install
+  
+    - name: generate-tailwindcss
+      run: npx tailwindcss -i input.css -o assets/tailwind.css
+
+    - name: dioxus-cli
+      run: cargo install --locked dioxus-cli
+    
+    - name: bundle
+      run: dx bundle --platform web
