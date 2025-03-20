@@ -17,7 +17,9 @@ jobs:
     
     - name: NodeJS-env
       uses: actions/setup-node@v4.3.0
-    
+    - name: npm-worker
+      uses: mudlabs/npm-worker@v1.3.0
+
     - name: install-libs
       run: npm install
   
