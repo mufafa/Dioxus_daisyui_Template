@@ -30,3 +30,9 @@ jobs:
     
     - name: bundle
       run: dx bundle --platform web
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.MY_PAGES_GITHUB_TOKEN }}
+        publish_dir: ./target/dx/dioxus_daisyui/release/web/public
