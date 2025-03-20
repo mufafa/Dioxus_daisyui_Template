@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-node@v2
     
     - name: install-libs
-      run: npm install
+      run: rm -rf .git/hooks && npm install
 
     - name: install-tailwindcss
       run: npm install -g tailwindcss
