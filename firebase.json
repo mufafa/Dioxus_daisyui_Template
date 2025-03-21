@@ -1,10 +1,16 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "target/dx/dioxus_daisyui/release/web/public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
